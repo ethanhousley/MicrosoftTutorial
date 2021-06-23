@@ -1,47 +1,36 @@
 ﻿@model IEnumerable<MicrosoftTutorial.Models.Person>
 
-@{
-    ViewData["Title"] = "Index";
+@{ 
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "User List";
 }
+   
+ <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <table>
+            <thead>
+                <tr>
+                    <th>UserID</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Zip</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var user in Model) {
+                
+                    <tr>
+                        <td>@user.UserID</td>
+                        <td>@user.City</td>
+                        <td>@user.State</td>
+                        <td>@user.Zip</td>
+                    </tr>
 
-<h1>Index</h1>
-
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.City)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.State)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Zip)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.City)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.State)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Zip)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.UserID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.UserID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.UserID">Delete</a>
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+                }
+            </tbody>
+        </table>
+    </body>
+    </html> 
