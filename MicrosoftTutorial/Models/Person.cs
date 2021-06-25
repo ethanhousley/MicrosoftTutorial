@@ -11,8 +11,11 @@ namespace MicrosoftTutorial.Models
     {
         [Key]
         public int UserID { get; set; }
+        [Required]
         public string City { get; set; }
+        [Required]
         public string State { get; set; }
+        [Required]
         public int Zip { get; set; }
 
        

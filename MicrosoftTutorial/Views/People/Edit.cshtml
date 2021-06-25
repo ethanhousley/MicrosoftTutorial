@@ -1,0 +1,33 @@
+﻿@model Person
+@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+@*Edit*@
+
+<div>
+    <form asp-action="Edit" method="post">
+        <div class="input-form">
+            <label for="UserID">UserID:</label>
+            <input asp-for="UserID" type="text" />
+        </div>
+        <div class="input-form">
+            <label for="City">City:</label>
+            <input asp-for="City" type="text" />
+        </div>
+        <div class="input-form">
+            <label for="State">State:</label>
+            <input asp-for="State" type="text" />
+        </div>
+        <div class="input-form">
+            <label for="Zip">Zip:</label>
+            <input asp-for="Zip" type="text" />
+        </div>
+        <div class="btn">
+            <input type="submit" value="submit" />
+            <br />
+        </div>
+    </form>
+</div>

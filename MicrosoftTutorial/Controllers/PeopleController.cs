@@ -34,7 +34,48 @@ namespace MicrosoftTutorial.Controllers
             return View(personList);
         }
 
+        public IActionResult Create()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public IActionResult Create(Person person)
+        {
+            _db.Add(person);
+            _db.SaveChanges();
+            return View(person);
+        }
+
+        public IActionResult Edit()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Person person)
+        {
+            _db.Entry(person).State = EntityState.Modified;
+            _db.SaveChanges();
+            return View(person);
+        }
+
+
+        public IActionResult Delete()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public  IActionResult Delete(Person person)
+        {
+            var person1 = _db.PrimaryUser.First(x => x.UserID == person.UserID);
+            _db.PrimaryUser.Remove(person1);
+            _db.SaveChanges();
+            
+            return View();
+        }
         
  
 

@@ -49,6 +49,7 @@ html {
 button.accept-policy {
   font-size: 1rem;
   line-height: inherit;
+
 }
 
 /* Sticky footer styles
@@ -69,3 +70,15 @@ body {
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
 }
+
+.input-form {
+  width: 200px;
+  clear: both;
+}
+
+.input-form input{
+  width: 100%;
+  clear: both;
+}
+
+
